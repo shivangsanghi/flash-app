@@ -1,38 +1,24 @@
 <script lang="ts">
+	import { Card } from "../enums/cards";
 
+
+	export let cards: Card[];
 </script>
 
-<div class="card-container">
-	<div class="image-container">
-		<img src="">
-		<img src="">
-	</div>
-	<div class="number-container">K</div>
-	<div class="image-container">
-		<img src="">
-		<img src="">
-	</div>
+<div class="cards-container">
+{#each cards as card}
+	<img src={card.image} alt={card.name}/>
+{/each}
 </div>
 
 <style lang="scss">
-	.card-container{
-		--width: 200px;
-		width: var(--width);
-		height: calc(var(--width) * 1.5);
-		background-color: white;
-		border-radius: 1em;
-		border: 2px solid gray;
-
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		.image-container{
-			display: flex;
-			justify-content: space-between;
-		}
-		.number-container{
-			display: flex;
-			justify-content: center;
+	.cards-container{
+		display: inline-flex;
+		flex-direction: row;
+		border: 1px dotted gray;
+		border-radius: 5px;
+		> img{
+			max-width: 80px;
 		}
 	}
 </style>
