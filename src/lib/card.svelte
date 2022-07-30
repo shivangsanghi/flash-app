@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from "../enums/cards";
+	import type { Card } from "../enums/cards";
 
 
 	export let cards: Card[];
@@ -18,7 +18,8 @@
 		border: 1px dotted gray;
 		border-radius: 5px;
 		> img{
-			max-width: 80px;
+			width: 80px;
+			height: 80px;
 		}
 	}
 </style>
